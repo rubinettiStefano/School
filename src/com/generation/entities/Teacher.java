@@ -1,41 +1,25 @@
 package com.generation.entities;
 
-import java.time.LocalDate;
-
 import com.generation.library.List;
 
-public class Teacher 
+//La Classe Teacher è una SPECIALIZZAZIONE della Classe Person
+//Un teacher è tutto quello che è una Person e qualcosa in più
+//quando scrivo "extends" di fianco alla classe
+//dico EREDITÀ tutto dal tuo SUPERTIPO
+
+//SUPERTIPO -> Classe più Generica
+//SOTTOTIPO -> Classe più Specializzata
+
+//SOTTOTIPO extends SUPERTIPO
+public class Teacher extends Person
 {
-    private int id;
-    private String name,surname;
-    private LocalDate dob;
+    //QUI NON LE VEDIAMO ESPLICITAMENTE
+    //Ma teacher ha un id,un nome, un cognome e una dob
+    //le ha perchè È una persona, una persona più specializzata
+    //e noi abbiamo detto che ogni persona ha un id,un nome, un cognome e una dob
     private String fieldOfCompetence;
     private List<String> specializations = new List<String>();
     
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getSurname() {
-        return surname;
-    }
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-    public LocalDate getDob() {
-        return dob;
-    }
-    public void setDob(LocalDate dob) {
-        this.dob = dob;
-    }
     public String getFieldOfCompetence() {
         return fieldOfCompetence;
     }
