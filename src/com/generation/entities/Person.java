@@ -3,7 +3,13 @@ package com.generation.entities;
 import java.time.LocalDate;
 
 //Anche se non lo vedete implicitamente c'è scritto
-public class Person extends Object
+//Lo scopo di questa Classe è di fare da Modello, Da Fattor Comune
+//Per altre Classi
+
+//Una Classe Astratta è una Classe che riteniamo troppo generica per poter essere istanziata
+//una classe il cui UNICO scopo è quello di essere ESTESA, di fare da supertipo
+//con abstract IMPEDIAMO la creazione di oggetti di classe Person
+public abstract class Person extends Object
 {
     //public          -> visto e utilizzato ovunque
 
@@ -17,6 +23,22 @@ public class Person extends Object
     protected String name,surname;
     protected LocalDate dob;
     
+    // public Person() //versione estesa del costruttore vuoto
+    // {
+    //     super(); //viene sempre richiamato il costruttore del supertipo
+    //             //anche se di solito IMPLICITAMENTE
+    // }
+    public Person(){}
+    public Person(int id, String name, String surname, LocalDate dob) 
+    {
+        super();  //questo c'è sempre, ma implicito
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.dob = dob;
+    }
+
+
     public int getId() {
         return id;
     }
@@ -60,7 +82,14 @@ public class Person extends Object
     @Override
     public String toString()
     {
-        return "Ciao sono una persona di nome "+name+", cognome "+surname+" nata il "+dob;
+        return "Ciao mi chiamo "+name+" "+surname+", la mia data di nascità "+dob;
+    }
+
+    public boolean isValid()
+    {
+        return id>0 && name!=null && !name.isBlank() &&
+                surname!=null && !surname.isBlank()  &&
+                dob!=null;
     }
     
 }

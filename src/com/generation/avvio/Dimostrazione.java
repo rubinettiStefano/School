@@ -1,6 +1,7 @@
 package com.generation.avvio;
 
 import com.generation.entities.ClasseVuota;
+import com.generation.entities.Person;
 import com.generation.entities.Teacher;
 import com.generation.library.Console;
 import com.generation.library.List;
@@ -26,5 +27,8 @@ public class Dimostrazione
         ClasseVuota a = new ClasseVuota();
         
         Console.print(a);
+
+        Person p = new Person();//DISABILITA LA PAROLA CHIAVE NEW PER QUESTA CLASSE
+        p.setId(12);
     }
 }
