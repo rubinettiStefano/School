@@ -4,6 +4,10 @@ import java.time.LocalDate;
 
 import com.generation.library.List;
 
+
+//Una classe in realtà non è che possa avere solo un SUPERTIPO
+//una classe può avere un solo SUPERTIPO DIRETTO
+//Ma il suo supertipo può avere un altro supertipo che può avere un altro supertipo ecc..
 public class Student extends Person
 {
     private List<Double> grades = new List<Double>();

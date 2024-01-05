@@ -11,14 +11,16 @@ import com.generation.library.List;
 //SOTTOTIPO -> Classe più Specializzata
 
 //SOTTOTIPO extends SUPERTIPO
+
+//Teacher extends Person extends Object
 public class Teacher extends Person
 {
     //QUI NON LE VEDIAMO ESPLICITAMENTE
     //Ma teacher ha un id,un nome, un cognome e una dob
     //le ha perchè È una persona, una persona più specializzata
     //e noi abbiamo detto che ogni persona ha un id,un nome, un cognome e una dob
-    private String fieldOfCompetence;
-    private List<String> specializations = new List<String>();
+    protected String fieldOfCompetence;
+    protected List<String> specializations = new List<String>();
     
     public String getPresentation()
     {
